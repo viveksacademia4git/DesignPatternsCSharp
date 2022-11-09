@@ -3,7 +3,7 @@ using ChainOfResponsibility.Enums;
 using ChainOfResponsibility.Exceptions;
 using ChainOfResponsibility.Model;
 
-namespace ChainOfResponsibility.DesignPattern;
+namespace ChainOfResponsibility.CommunicationChannels;
 
 public abstract class CommunicationChannel : ICommunicationChannel
 {

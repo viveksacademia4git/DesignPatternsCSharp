@@ -1,10 +1,11 @@
 ﻿using ChainOfResponsibility.Model;
 
-namespace ChainOfResponsibility.DesignPattern;
+namespace ChainOfResponsibility.CommunicationChannels;
 
 public class EmailCommunicationChannel : CommunicationChannel
 {
     public EmailCommunicationChannel() : base(Enums.CommunicationChannelEnum.Email) { }
+
     protected override void PerformCommunication(DataModel dataModel)
     {
         Console.WriteLine($"Sending Email to '{dataModel.Name}' at '{dataModel.Email}'");

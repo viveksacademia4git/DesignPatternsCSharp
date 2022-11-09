@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using ChainOfResponsibility.CommunicationChannels;
 using ChainOfResponsibility.DesignPattern;
 using ChainOfResponsibility.DesignPattern.Interfaces;
 using ChainOfResponsibility.Enums;
@@ -8,7 +9,6 @@ namespace ChainOfResponsibility;
 
 public static class ProgramSetup
 {
-
     public static ICommunicationChannel SetupChainOfResponsibilityForCommunication() =>
         new LetterCommunicationChannel().AddNextInChain(new EmailCommunicationChannel())
             .AddNextInChain(new PhoneCallCommunicationChannel())

@@ -1,6 +1,6 @@
 ﻿using ChainOfResponsibility.Model;
 
-namespace ChainOfResponsibility.DesignPattern;
+namespace ChainOfResponsibility.CommunicationChannels;
 
 public class LetterCommunicationChannel : CommunicationChannel
 {

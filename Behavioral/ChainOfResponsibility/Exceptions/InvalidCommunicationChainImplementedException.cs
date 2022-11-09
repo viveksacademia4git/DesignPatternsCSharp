@@ -2,5 +2,5 @@
 
 public class InvalidCommunicationChainImplementedException : InvalidOperationException
 {
-    public InvalidCommunicationChainImplementedException(string message) : base(message) {}
+    public InvalidCommunicationChainImplementedException(string message) : base(message) { }
 }

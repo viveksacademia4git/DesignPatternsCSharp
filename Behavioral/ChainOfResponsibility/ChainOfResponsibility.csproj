@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Extensions" />
+        <Folder Include="Extensions"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Bogus" Version="34.0.2" />
+        <PackageReference Include="Bogus" Version="34.0.2"/>
     </ItemGroup>
 
 </Project>
