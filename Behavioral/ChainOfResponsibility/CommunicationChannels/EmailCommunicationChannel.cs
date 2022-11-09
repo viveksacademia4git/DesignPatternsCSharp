@@ -1,10 +1,11 @@
-﻿using ChainOfResponsibility.Model;
+﻿using ChainOfResponsibility.Enums;
+using ChainOfResponsibility.Model;
 
 namespace ChainOfResponsibility.CommunicationChannels;
 
 public class EmailCommunicationChannel : CommunicationChannel
 {
-    public EmailCommunicationChannel() : base(Enums.CommunicationChannelEnum.Email) { }
+    public EmailCommunicationChannel() : base(CommunicationChannelEnum.Email) { }
 
     protected override void PerformCommunication(DataModel dataModel)
     {

@@ -1,10 +1,11 @@
-﻿using ChainOfResponsibility.Model;
+﻿using ChainOfResponsibility.Enums;
+using ChainOfResponsibility.Model;
 
 namespace ChainOfResponsibility.CommunicationChannels;
 
 public class PhoneCallCommunicationChannel : CommunicationChannel
 {
-    public PhoneCallCommunicationChannel() : base(Enums.CommunicationChannelEnum.PhoneCall) { }
+    public PhoneCallCommunicationChannel() : base(CommunicationChannelEnum.PhoneCall) { }
 
     protected override void PerformCommunication(DataModel dataModel)
     {

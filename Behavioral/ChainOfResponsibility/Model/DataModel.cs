@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using ChainOfResponsibility.Enums;
+﻿using ChainOfResponsibility.Enums;
 
 namespace ChainOfResponsibility.Model;
 

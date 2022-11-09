@@ -1,10 +1,11 @@
-﻿using ChainOfResponsibility.Model;
+﻿using ChainOfResponsibility.Enums;
+using ChainOfResponsibility.Model;
 
 namespace ChainOfResponsibility.CommunicationChannels;
 
 public class LetterCommunicationChannel : CommunicationChannel
 {
-    public LetterCommunicationChannel() : base(Enums.CommunicationChannelEnum.Letter) { }
+    public LetterCommunicationChannel() : base(CommunicationChannelEnum.Letter) { }
 
     protected override void PerformCommunication(DataModel dataModel)
     {

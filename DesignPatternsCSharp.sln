@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", "{868F9DBC-8E74-49FB-B65E-D444F2CCCF83}"
+	ProjectSection(SolutionItems) = preProject
+		Behavioral\README.md = Behavioral\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsibility", "Behavioral\ChainOfResponsibility\ChainOfResponsibility.csproj", "{4156C10E-4D69-4591-9A07-15E109B1D799}"
 EndProject
