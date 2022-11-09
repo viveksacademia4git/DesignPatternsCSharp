@@ -1,6 +1,6 @@
-﻿using ChainOfResponsibility.Model;
+﻿using Models;
 
-namespace ChainOfResponsibility.DesignPattern.Interfaces;
+namespace ChainOfResponsibility.Chains.Interfaces;
 
 public interface ICommunicationChannel
 {

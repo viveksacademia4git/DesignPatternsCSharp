@@ -1,7 +1,8 @@
 ﻿using ChainOfResponsibility.Enums;
-using ChainOfResponsibility.Model;
+using Models;
+using Models.Components;
 
-namespace ChainOfResponsibility.CommunicationChannels;
+namespace ChainOfResponsibility.Chains;
 
 public class SmsCommunicationChannel : CommunicationChannel
 {
@@ -9,9 +10,17 @@ public class SmsCommunicationChannel : CommunicationChannel
 
     protected override void PerformCommunication(DataModel dataModel)
     {
+        Task.Delay(10);
+
         var phone = GetSmsActivePhone(dataModel);
-        Console.WriteLine($"Sending SMS to '{dataModel.Name}' on phone number '{phone.Number}'");
-        Console.WriteLine($"SMS sent to '{dataModel.Name}' on phone number '{phone.Number}'");
+
+        Console.WriteLine($"Scheduling SMS for '{dataModel.Name}' on phone number '{phone.Number}'");
+
+        ProgramSetup.SmsCommunications.Add(phone);
+
+        Console.WriteLine($"SMS scheduled for '{dataModel.Name}' on phone number '{phone.Number}'");
+
+        Task.Delay(10);
     }
 
     private static IPhone GetSmsActivePhone(DataModel dataModel)

@@ -1,7 +1,8 @@
 ﻿using ChainOfResponsibility.Enums;
-using ChainOfResponsibility.Model;
+using Models;
+using Models.Components;
 
-namespace ChainOfResponsibility.CommunicationChannels;
+namespace ChainOfResponsibility.Chains;
 
 public class PhoneCallCommunicationChannel : CommunicationChannel
 {
@@ -9,9 +10,17 @@ public class PhoneCallCommunicationChannel : CommunicationChannel
 
     protected override void PerformCommunication(DataModel dataModel)
     {
+        Task.Delay(10);
+
         var phone = GetCallingAllowedPhone(dataModel);
-        Console.WriteLine($"Scheduling Call with '{dataModel.Name}' for phone number '{phone.Number}'");
-        Console.WriteLine($"Call scheduled with '{dataModel.Name}' for phone number '{phone.Number}'");
+
+        Console.WriteLine($"Scheduling Call for '{dataModel.Name}' on phone number '{phone.Number}'");
+
+        ProgramSetup.PhoneCallCommunications.Add(phone);
+
+        Console.WriteLine($"Call scheduled for '{dataModel.Name}' on phone number '{phone.Number}'");
+
+        Task.Delay(10);
     }
 
     private static IPhone GetCallingAllowedPhone(DataModel dataModel)

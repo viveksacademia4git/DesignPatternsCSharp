@@ -8,12 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bogus" Version="34.0.2"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\..\Enums\Enums.csproj"/>
-        <ProjectReference Include="..\..\Models\Models.csproj"/>
+        <ProjectReference Include="..\..\Models\Models.csproj" />
+        <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
     </ItemGroup>
 
 </Project>

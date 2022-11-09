@@ -1,9 +1,9 @@
-﻿using ChainOfResponsibility.DesignPattern.Interfaces;
+﻿using ChainOfResponsibility.Chains.Interfaces;
 using ChainOfResponsibility.Enums;
 using ChainOfResponsibility.Exceptions;
-using ChainOfResponsibility.Model;
+using Models;
 
-namespace ChainOfResponsibility.CommunicationChannels;
+namespace ChainOfResponsibility.Chains;
 
 public abstract class CommunicationChannel : ICommunicationChannel
 {
