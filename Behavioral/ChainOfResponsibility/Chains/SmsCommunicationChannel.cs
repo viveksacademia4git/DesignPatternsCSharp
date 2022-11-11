@@ -1,6 +1,9 @@
 ﻿using ChainOfResponsibility.Enums;
+using DesignPatternInterfaces;
+using IO;
 using Models;
 using Models.Components;
+using static ChainOfResponsibility.ProgramSetup;
 
 namespace ChainOfResponsibility.Chains;
 
@@ -8,19 +11,15 @@ public class SmsCommunicationChannel : CommunicationChannel
 {
     public SmsCommunicationChannel() : base(CommunicationChannelEnum.Sms) { }
 
-    protected override void PerformCommunication(DataModel dataModel)
+    protected override void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
     {
-        Task.Delay(10);
-
         var phone = GetSmsActivePhone(dataModel);
 
-        Console.WriteLine($"Scheduling SMS for '{dataModel.Name}' on phone number '{phone.Number}'");
+        $"Scheduling SMS for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
 
-        ProgramSetup.SmsCommunications.Add(phone);
+        communicationOrganiser.Sms(phone);
 
-        Console.WriteLine($"SMS scheduled for '{dataModel.Name}' on phone number '{phone.Number}'");
-
-        Task.Delay(10);
+        $"SMS scheduled for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
     }
 
     private static IPhone GetSmsActivePhone(DataModel dataModel)

@@ -1,5 +1,5 @@
 ﻿using ChainOfResponsibility.Chains;
-using ChainOfResponsibility.Chains.Interfaces;
+using DesignPatternInterfaces;
 using Models;
 using Models.Components;
 
@@ -7,27 +7,22 @@ namespace ChainOfResponsibility;
 
 public static class ProgramSetup
 {
-    public static List<IPhone> PhoneCallCommunications { get; private set; } = new();
-    public static List<IPhone> SmsCommunications { get; private set; } = new();
-
-    private static ICommunicationChannel SetupChainOfResponsibilityForCommunication()
+    private static ICommunicationChannel ConfigureChainOfResponsibilityForCommunication()
     {
         return new LetterCommunicationChannel().AddNextInChain(new EmailCommunicationChannel())
             .AddNextInChain(new PhoneCallCommunicationChannel())
             .AddNextInChain(new SmsCommunicationChannel());
     }
 
-    public static void StartCommunication()
+    public static void InitializeCommunication(ICommunicationOrganiser communicationOrganiser)
     {
-        PhoneCallCommunications = new List<IPhone>();
-        SmsCommunications = new List<IPhone>();
 
-        var communication = SetupChainOfResponsibilityForCommunication();
+        var communication = ConfigureChainOfResponsibilityForCommunication();
 
         Loader.GetRandomDataModels().ForEach(dataModel =>
         {
             Console.WriteLine($"\n({dataModel.Id})");
-            communication.ProcessResponsibility(dataModel);
+            communication.Process(dataModel, communicationOrganiser);
         });
     }
 }

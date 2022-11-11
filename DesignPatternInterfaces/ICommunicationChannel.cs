@@ -1,10 +1,10 @@
 ﻿using Models;
 
-namespace ChainOfResponsibility.Chains.Interfaces;
+namespace DesignPatternInterfaces;
 
 public interface ICommunicationChannel
 {
     ICommunicationChannel AddNextInChain(ICommunicationChannel communicationChannel);
 
-    void ProcessResponsibility(DataModel dataModel);
+    void Process(DataModel dataModel, ICommunicationOrganiser communicationOrganiser);
 }

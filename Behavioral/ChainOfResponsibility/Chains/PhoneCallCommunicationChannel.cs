@@ -1,4 +1,6 @@
 ﻿using ChainOfResponsibility.Enums;
+using DesignPatternInterfaces;
+using IO;
 using Models;
 using Models.Components;
 
@@ -8,19 +10,15 @@ public class PhoneCallCommunicationChannel : CommunicationChannel
 {
     public PhoneCallCommunicationChannel() : base(CommunicationChannelEnum.PhoneCall) { }
 
-    protected override void PerformCommunication(DataModel dataModel)
+    protected override void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
     {
-        Task.Delay(10);
-
         var phone = GetCallingAllowedPhone(dataModel);
 
-        Console.WriteLine($"Scheduling Call for '{dataModel.Name}' on phone number '{phone.Number}'");
+        $"Scheduling Call for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
 
-        ProgramSetup.PhoneCallCommunications.Add(phone);
+        communicationOrganiser.PhoneCall(phone);
 
-        Console.WriteLine($"Call scheduled for '{dataModel.Name}' on phone number '{phone.Number}'");
-
-        Task.Delay(10);
+        $"Call scheduled for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
     }
 
     private static IPhone GetCallingAllowedPhone(DataModel dataModel)

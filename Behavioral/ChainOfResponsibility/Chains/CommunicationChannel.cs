@@ -1,6 +1,7 @@
-﻿using ChainOfResponsibility.Chains.Interfaces;
+﻿
 using ChainOfResponsibility.Enums;
 using ChainOfResponsibility.Exceptions;
+using DesignPatternInterfaces;
 using Models;
 
 namespace ChainOfResponsibility.Chains;
@@ -27,16 +28,16 @@ public abstract class CommunicationChannel : ICommunicationChannel
         return this;
     }
 
-    public void ProcessResponsibility(DataModel dataModel)
+    public void Process(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
     {
         var isResponsible = _communicationChannelEnum.Equals(dataModel.DefaultCommunicationChannelEnum);
 
         try
         {
             if (isResponsible)
-                PerformCommunication(dataModel);
+                PerformCommunication(dataModel, communicationOrganiser);
             else
-                PassOnResponsibilityToNextInChain(dataModel);
+                PassOnResponsibilityToNextInChain(dataModel, communicationOrganiser);
         }
         catch (Exception exception)
         {
@@ -44,7 +45,7 @@ public abstract class CommunicationChannel : ICommunicationChannel
         }
     }
 
-    private void PassOnResponsibilityToNextInChain(DataModel dataModel)
+    private void PassOnResponsibilityToNextInChain(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
     {
         if (_nextInChain is null)
         {
@@ -52,9 +53,8 @@ public abstract class CommunicationChannel : ICommunicationChannel
             throw new InvalidCommunicationChainImplementedException(msg);
         }
 
-        _nextInChain.ProcessResponsibility(dataModel);
+        _nextInChain.Process(dataModel, communicationOrganiser);
     }
 
-
-    protected abstract void PerformCommunication(DataModel dataModel);
+    protected abstract void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser);
 }
