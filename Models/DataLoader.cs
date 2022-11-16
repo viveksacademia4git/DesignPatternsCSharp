@@ -4,16 +4,16 @@ using Models.Components;
 
 namespace Models;
 
-public class Loader
+public static class DataLoader
 {
-    public static List<DataModel> GetRandomDataModels()
+    public static List<Person> GetRandomDataModels()
     {
         return Enumerable.Range(0, new Faker().Random.Int(1, 10)).Select(id => GetDataModel(id + 1)).ToList();
     }
 
-    private static DataModel GetDataModel(long id = 1)
+    private static Person GetDataModel(long id = 1)
     {
-        return new()
+        return new Person
         {
             Id = id,
             Name = $"{Person().FirstName} {Person().LastName}",
@@ -36,7 +36,7 @@ public class Loader
     private static IEmail GetEmail(long id)
     {
         return new Email
-            { RefId = id, EmailAddress = Person().Email, Default = RandomBool()};
+            { RefId = id, EmailAddress = Person().Email, Default = RandomBool() };
     }
 
     private static IPhone GetPhone(long id)
@@ -45,12 +45,12 @@ public class Loader
             { RefId = id, Number = PhoneNumber(), CallingAllowed = true, SmsActive = true };
     }
 
-    private static Person Person()
+    private static Bogus.Person Person()
     {
         return new Faker().Person;
     }
 
-    private static Person.CardAddress Address()
+    private static Bogus.Person.CardAddress Address()
     {
         return Person().Address;
     }

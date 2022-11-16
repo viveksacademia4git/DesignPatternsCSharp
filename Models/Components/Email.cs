@@ -1,6 +1,6 @@
 ﻿namespace Models.Components;
 
-class Email : IEmail
+internal class Email : IEmail
 {
     public long RefId { get; set; }
     public string EmailAddress { get; set; }

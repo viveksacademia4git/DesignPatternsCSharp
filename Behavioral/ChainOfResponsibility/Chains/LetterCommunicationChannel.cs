@@ -9,12 +9,12 @@ public class LetterCommunicationChannel : CommunicationChannel
 {
     public LetterCommunicationChannel() : base(CommunicationChannelEnum.Letter) { }
 
-    protected override void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
+    protected override void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser)
     {
-        $"Scheduling Letter for '{dataModel.Name}' at address '{dataModel.Address}'.".Print();
-        
-        communicationOrganiser.Letter(dataModel.Address);
+        $"Scheduling Letter for '{person.Name}' at address '{person.Address}'.".Print();
 
-        $"Letter scheduled to '{dataModel.Name}' at address '{dataModel.Address}'.".Print();
+        communicationOrganiser.Letter(person.Address);
+
+        $"Letter scheduled to '{person.Name}' at address '{person.Address}'.".Print();
     }
 }

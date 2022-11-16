@@ -6,5 +6,5 @@ public interface ICommunicationChannel
 {
     ICommunicationChannel AddNextInChain(ICommunicationChannel communicationChannel);
 
-    void Process(DataModel dataModel, ICommunicationOrganiser communicationOrganiser);
+    void Process(Person person, ICommunicationOrganiser communicationOrganiser);
 }

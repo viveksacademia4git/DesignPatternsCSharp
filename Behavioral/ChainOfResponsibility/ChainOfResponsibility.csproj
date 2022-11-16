@@ -7,10 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\DesignPatternInterfaces\DesignPatternInterfaces.csproj" />
-      <ProjectReference Include="..\..\Enums\Enums.csproj" />
-      <ProjectReference Include="..\..\IO\IO.csproj" />
-      <ProjectReference Include="..\..\Models\Models.csproj" />
+        <ProjectReference Include="..\..\DesignPatternInterfaces\DesignPatternInterfaces.csproj"/>
+        <ProjectReference Include="..\..\Enums\Enums.csproj"/>
+        <ProjectReference Include="..\..\IO\IO.csproj"/>
+        <ProjectReference Include="..\..\Models\Models.csproj"/>
     </ItemGroup>
 
 </Project>

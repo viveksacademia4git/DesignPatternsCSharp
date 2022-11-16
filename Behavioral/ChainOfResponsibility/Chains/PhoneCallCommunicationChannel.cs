@@ -10,24 +10,24 @@ public class PhoneCallCommunicationChannel : CommunicationChannel
 {
     public PhoneCallCommunicationChannel() : base(CommunicationChannelEnum.PhoneCall) { }
 
-    protected override void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
+    protected override void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser)
     {
-        var phone = GetCallingAllowedPhone(dataModel);
+        var phone = GetCallingAllowedPhone(person);
 
-        $"Scheduling Call for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
+        $"Scheduling Call for '{person.Name}' on phone number '{phone.Number}'.".Print();
 
         communicationOrganiser.PhoneCall(phone);
 
-        $"Call scheduled for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
+        $"Call scheduled for '{person.Name}' on phone number '{phone.Number}'.".Print();
     }
 
-    private static IPhone GetCallingAllowedPhone(DataModel dataModel)
+    private static IPhone GetCallingAllowedPhone(Person person)
     {
-        foreach (var phone in dataModel.Phones)
+        foreach (var phone in person.Phones)
             if (phone.CallingAllowed)
                 return phone;
 
-        var msg = $"Calling is not allowed on any given phone number for '{dataModel.Name}'";
+        var msg = $"Calling is not allowed on any given phone number for '{person.Name}'";
         throw new InvalidOperationException(msg);
     }
 }

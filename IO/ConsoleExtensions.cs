@@ -4,12 +4,11 @@ public static class ConsoleExtensions
 {
     public static void Print(this string str)
     {
-        #if !DEBUG
-
+#if !DEBUG
         // For better print in Run-Mode
         Task.Delay(10);
 
-        #endif
+#endif
 
         Console.WriteLine(str);
     }

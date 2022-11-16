@@ -3,7 +3,6 @@ using DesignPatternInterfaces;
 using IO;
 using Models;
 using Models.Components;
-using static ChainOfResponsibility.ProgramSetup;
 
 namespace ChainOfResponsibility.Chains;
 
@@ -11,24 +10,24 @@ public class SmsCommunicationChannel : CommunicationChannel
 {
     public SmsCommunicationChannel() : base(CommunicationChannelEnum.Sms) { }
 
-    protected override void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
+    protected override void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser)
     {
-        var phone = GetSmsActivePhone(dataModel);
+        var phone = GetSmsActivePhone(person);
 
-        $"Scheduling SMS for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
+        $"Scheduling SMS for '{person.Name}' on phone number '{phone.Number}'.".Print();
 
         communicationOrganiser.Sms(phone);
 
-        $"SMS scheduled for '{dataModel.Name}' on phone number '{phone.Number}'.".Print();
+        $"SMS scheduled for '{person.Name}' on phone number '{phone.Number}'.".Print();
     }
 
-    private static IPhone GetSmsActivePhone(DataModel dataModel)
+    private static IPhone GetSmsActivePhone(Person person)
     {
-        foreach (var phone in dataModel.Phones)
+        foreach (var phone in person.Phones)
             if (phone.SmsActive)
                 return phone;
 
-        var msg = $"SMS service is not active on any given phone number for '{dataModel.Name}'";
+        var msg = $"SMS service is not active on any given phone number for '{person.Name}'";
         throw new InvalidOperationException(msg);
     }
 }

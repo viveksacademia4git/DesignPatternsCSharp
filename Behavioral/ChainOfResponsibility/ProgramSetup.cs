@@ -1,7 +1,6 @@
 ﻿using ChainOfResponsibility.Chains;
 using DesignPatternInterfaces;
 using Models;
-using Models.Components;
 
 namespace ChainOfResponsibility;
 
@@ -16,10 +15,9 @@ public static class ProgramSetup
 
     public static void InitializeCommunication(ICommunicationOrganiser communicationOrganiser)
     {
-
         var communication = ConfigureChainOfResponsibilityForCommunication();
 
-        Loader.GetRandomDataModels().ForEach(dataModel =>
+        DataLoader.GetRandomDataModels().ForEach(dataModel =>
         {
             Console.WriteLine($"\n({dataModel.Id})");
             communication.Process(dataModel, communicationOrganiser);

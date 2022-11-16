@@ -10,23 +10,23 @@ public class EmailCommunicationChannel : CommunicationChannel
 {
     public EmailCommunicationChannel() : base(CommunicationChannelEnum.Email) { }
 
-    protected override void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
+    protected override void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser)
     {
-        var email = GetEmail(dataModel);
+        var email = GetEmail(person);
 
-        $"Scheduling Email for '{dataModel.Name}' at email '{email.EmailAddress}'.".Print();
+        $"Scheduling Email for '{person.Name}' at email '{email.EmailAddress}'.".Print();
 
         communicationOrganiser.Email(email);
 
-        $"Email scheduled for '{dataModel.Name}' at email '{email.EmailAddress}'.".Print();
+        $"Email scheduled for '{person.Name}' at email '{email.EmailAddress}'.".Print();
     }
 
-    private static IEmail GetEmail(DataModel dataModel)
+    private static IEmail GetEmail(Person person)
     {
-        foreach (var email in dataModel.Emails)
+        foreach (var email in person.Emails)
             if (email.Default)
                 return email;
 
-        return dataModel.Emails.First();
+        return person.Emails.First();
     }
 }

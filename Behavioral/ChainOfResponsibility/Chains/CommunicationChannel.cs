@@ -1,5 +1,4 @@
-﻿
-using ChainOfResponsibility.Enums;
+﻿using ChainOfResponsibility.Enums;
 using ChainOfResponsibility.Exceptions;
 using DesignPatternInterfaces;
 using Models;
@@ -28,16 +27,16 @@ public abstract class CommunicationChannel : ICommunicationChannel
         return this;
     }
 
-    public void Process(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
+    public void Process(Person person, ICommunicationOrganiser communicationOrganiser)
     {
-        var isResponsible = _communicationChannelEnum.Equals(dataModel.DefaultCommunicationChannelEnum);
+        var isResponsible = _communicationChannelEnum.Equals(person.DefaultCommunicationChannelEnum);
 
         try
         {
             if (isResponsible)
-                PerformCommunication(dataModel, communicationOrganiser);
+                PerformCommunication(person, communicationOrganiser);
             else
-                PassOnResponsibilityToNextInChain(dataModel, communicationOrganiser);
+                PassOnResponsibilityToNextInChain(person, communicationOrganiser);
         }
         catch (Exception exception)
         {
@@ -45,7 +44,7 @@ public abstract class CommunicationChannel : ICommunicationChannel
         }
     }
 
-    private void PassOnResponsibilityToNextInChain(DataModel dataModel, ICommunicationOrganiser communicationOrganiser)
+    private void PassOnResponsibilityToNextInChain(Person person, ICommunicationOrganiser communicationOrganiser)
     {
         if (_nextInChain is null)
         {
@@ -53,8 +52,8 @@ public abstract class CommunicationChannel : ICommunicationChannel
             throw new InvalidCommunicationChainImplementedException(msg);
         }
 
-        _nextInChain.Process(dataModel, communicationOrganiser);
+        _nextInChain.Process(person, communicationOrganiser);
     }
 
-    protected abstract void PerformCommunication(DataModel dataModel, ICommunicationOrganiser communicationOrganiser);
+    protected abstract void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser);
 }

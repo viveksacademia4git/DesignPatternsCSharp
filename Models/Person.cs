@@ -3,7 +3,7 @@ using Models.Components;
 
 namespace Models;
 
-public class DataModel
+public class Person
 {
     public long Id { get; set; }
 

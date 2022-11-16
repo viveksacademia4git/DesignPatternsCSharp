@@ -1,6 +1,6 @@
 ﻿namespace Models.Components;
 
-class Address : IAddress
+internal class Address : IAddress
 {
     public long RefId { get; set; }
     public string? Suite { get; set; }
