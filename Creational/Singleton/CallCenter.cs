@@ -10,9 +10,11 @@ public class CallCenter : ICommunicationResource<PhoneCall>
 {
     private static readonly object InstanceLock = new();
 
-    private CallCenter() { }
-
     private static CallCenter? _instance;
+
+    private static readonly List<PhoneCaller> PhoneCallList = new List<PhoneCaller>();
+
+    private CallCenter() { }
 
     public static CallCenter GetInstance
     {
@@ -44,9 +46,7 @@ public class CallCenter : ICommunicationResource<PhoneCall>
             return;
 
         foreach (var phoneCaller in phoneCallers)
-        {
             phoneCaller.Result().Publish();
-        }
 
         // ReSharper disable once TailRecursiveCall
         StartCalling();
@@ -57,6 +57,4 @@ public class CallCenter : ICommunicationResource<PhoneCall>
         var faker = new Faker();
         return new CallOperator { Id = faker.Random.Long(), Name = faker.Person.FullName };
     }
-
-    private static List<PhoneCaller> PhoneCallList = new List<PhoneCaller>();
 }

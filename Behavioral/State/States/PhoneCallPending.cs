@@ -1,5 +1,4 @@
-﻿using Bogus;
-using IO;
+﻿using IO;
 using Models;
 
 namespace State.States;

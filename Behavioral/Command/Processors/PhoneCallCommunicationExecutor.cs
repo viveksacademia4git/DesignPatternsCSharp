@@ -2,7 +2,6 @@
 using DesignPatternInterfaces;
 using IO;
 using Models.Components;
-using Singleton;
 
 namespace Command.Processors;
 
@@ -14,7 +13,7 @@ public class PhoneCallCommunicationExecutor : ICommunicationExecutor
     public PhoneCallCommunicationExecutor(IPhone phone)
     {
         _phone = phone;
-        _communicationAdapter = new PhoneCallAdapter(CallCenter.GetInstance, phone);
+        _communicationAdapter = new PhoneCallAdapter(phone);
     }
 
     public void Execute()

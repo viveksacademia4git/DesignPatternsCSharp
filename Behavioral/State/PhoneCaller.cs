@@ -7,7 +7,6 @@ namespace State;
 
 public class PhoneCaller : IPhoneCallerAttempt, IPhoneCallerResult
 {
-
     public PhoneCaller(PhoneCall phoneCall)
     {
         PhoneCallState = new PhoneCallPending(phoneCall);
@@ -22,7 +21,7 @@ public class PhoneCaller : IPhoneCallerAttempt, IPhoneCallerResult
 
         var callResult = new Faker().Random.Bool();
 
-        if(callResult)
+        if (callResult)
             PhoneCallState = new PhoneCallCompleted(PhoneCallState.PhoneCall);
 
         return this;
