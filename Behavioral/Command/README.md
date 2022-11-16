@@ -4,7 +4,7 @@ The requests are wrapped under objects as commands and then passed to the invoke
 
 ## Implementation Example
 
-### Phone communication Channels
+### Phone communication channels
 
 - Phone
 - SMS

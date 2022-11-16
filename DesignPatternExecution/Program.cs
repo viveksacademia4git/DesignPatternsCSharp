@@ -3,6 +3,7 @@
 using ChainOfResponsibility;
 using Command.Invoker;
 using IO;
+using Singleton;
 
 var organiser = new CommunicationOrganiser();
 
@@ -18,3 +19,8 @@ ProgramSetup.InitializeCommunication(organiser);
 
 "\n-------- Start Communication --------".Print();
 organiser.Start();
+
+
+"\n-------- Start Call Center --------".Print();
+
+CallCenter.StartCalling();

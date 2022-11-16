@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Creational\Singleton\Singleton.csproj" />
-        <ProjectReference Include="..\..\DesignPatternInterfaces\DesignPatternInterfaces.csproj" />
-        <ProjectReference Include="..\..\Models\Models.csproj" />
+        <ProjectReference Include="..\..\Creational\Singleton\Singleton.csproj"/>
+        <ProjectReference Include="..\..\DesignPatternInterfaces\DesignPatternInterfaces.csproj"/>
+        <ProjectReference Include="..\..\Models\Models.csproj"/>
     </ItemGroup>
 
 </Project>

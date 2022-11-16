@@ -6,3 +6,4 @@ They identify common communication patterns among objects.
 
 1. [Chain of Responsibility](ChainOfResponsibility)
 2. [Command](Command)
+3. [State](State)

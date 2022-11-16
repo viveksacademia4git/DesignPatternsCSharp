@@ -1,11 +1,14 @@
-﻿using IO;
+﻿using Bogus;
+using IO;
 using Models;
+using State;
+using State.States;
 
 namespace Singleton;
 
 public class CallCenter : ICommunicationResource<PhoneCall>
 {
-    private static readonly object InstanceLock = new ();
+    private static readonly object InstanceLock = new();
 
     private CallCenter() { }
 
@@ -22,12 +25,38 @@ public class CallCenter : ICommunicationResource<PhoneCall>
         }
     }
 
-    public void Communicate(PhoneCall phoneCall)
+    public void Assign(PhoneCall phoneCall)
     {
-        var msg = $"operator '{phoneCall.Operator.Name}' and phone number '{phoneCall.Phone.Number}'";
+        phoneCall.Operator = FindAvailableCallOperator();
 
-        $"Saving phone call communication between {msg}".Print();
+        $"Assigned operator '{phoneCall.Operator.Name}' for phone number '{phoneCall.Phone.Number}'".Print();
 
-        $"Calling started between {msg} ".Print();
+        PhoneCallList.Add(new PhoneCaller(phoneCall));
     }
+
+
+    public static void StartCalling()
+    {
+        var phoneCallers = PhoneCallList.Where(callState =>
+            callState.PhoneCallState.GetType() == typeof(PhoneCallPending)).ToList();
+
+        if (phoneCallers.Count <= 0)
+            return;
+
+        foreach (var phoneCaller in phoneCallers)
+        {
+            phoneCaller.Result().Publish();
+        }
+
+        // ReSharper disable once TailRecursiveCall
+        StartCalling();
+    }
+
+    private static CallOperator FindAvailableCallOperator()
+    {
+        var faker = new Faker();
+        return new CallOperator { Id = faker.Random.Long(), Name = faker.Person.FullName };
+    }
+
+    private static List<PhoneCaller> PhoneCallList = new List<PhoneCaller>();
 }

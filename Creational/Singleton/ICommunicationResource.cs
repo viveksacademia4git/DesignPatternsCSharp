@@ -2,5 +2,5 @@
 
 public interface ICommunicationResource<in TCom>
 {
-    void Communicate(TCom communicationMedium);
+    void Assign(TCom communicationMedium);
 }

@@ -4,7 +4,7 @@ Sender sends the request to chain of objects.
 
 ## Implementation Example
 
-### Communication Channels
+### Communication channels
 
 - Letter
 - Email
