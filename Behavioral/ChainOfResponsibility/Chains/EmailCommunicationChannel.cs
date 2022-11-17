@@ -1,5 +1,5 @@
-﻿using ChainOfResponsibility.Enums;
-using DesignPatternInterfaces;
+﻿using DesignPatternInterfaces;
+using Enums;
 using IO;
 using Models;
 using Models.Components;
@@ -16,7 +16,7 @@ public class EmailCommunicationChannel : CommunicationChannel
 
         $"Scheduling Email for '{person.Name}' at email '{email.EmailAddress}'.".Print();
 
-        communicationOrganiser.Email(email);
+        communicationOrganiser.Email(email, person);
 
         $"Email scheduled for '{person.Name}' at email '{email.EmailAddress}'.".Print();
     }

@@ -1,36 +1,38 @@
-﻿using Command.Processors;
+﻿
+using Command.Processors;
 using DesignPatternInterfaces;
+using Models;
 using Models.Components;
 
 namespace Command.Invoker;
 
 public class CommunicationOrganiser : ICommunicationOrganiser
 {
-    private IList<ICommunicationExecutor> _telephoneCommunications;
+    private IList<ICommunicationProcessor> _telephoneCommunications;
 
     public CommunicationOrganiser()
     {
-        _telephoneCommunications = new List<ICommunicationExecutor>();
+        _telephoneCommunications = new List<ICommunicationProcessor>();
     }
 
-    public void Letter(IAddress address)
+    public void Letter(IAddress address, Person person)
     {
-        _telephoneCommunications.Add(new LetterCommunicationExecutor(address));
+        _telephoneCommunications.Add(new LetterCommunicationProcessor(address, person));
     }
 
-    public void Email(IEmail email)
+    public void Email(IEmail email, Person person)
     {
-        _telephoneCommunications.Add(new EmailCommunicationExecutor(email));
+        _telephoneCommunications.Add(new EmailCommunicationProcessor(email, person));
     }
 
-    public void PhoneCall(IPhone phone)
+    public void PhoneCall(IPhone phone, Person person)
     {
-        _telephoneCommunications.Add(new PhoneCallCommunicationExecutor(phone));
+        _telephoneCommunications.Add(new PhoneCallCommunicationProcessor(phone, person));
     }
 
-    public void Sms(IPhone phone)
+    public void Sms(IPhone phone, Person person)
     {
-        _telephoneCommunications.Add(new SmsCommunicationExecutor(phone));
+        _telephoneCommunications.Add(new SmsCommunicationProcessor(phone, person));
     }
 
     public void Start()
@@ -44,6 +46,6 @@ public class CommunicationOrganiser : ICommunicationOrganiser
         foreach (var telephoneCommunication in _telephoneCommunications)
             telephoneCommunication.Execute();
 
-        _telephoneCommunications = new List<ICommunicationExecutor>();
+        _telephoneCommunications = new List<ICommunicationProcessor>();
     }
 }

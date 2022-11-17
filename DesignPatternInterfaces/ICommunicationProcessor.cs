@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternInterfaces;
 
-public interface ICommunicationExecutor
+public interface ICommunicationProcessor
 {
     void Execute();
 }

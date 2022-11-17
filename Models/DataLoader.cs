@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using ChainOfResponsibility.Enums;
+using Enums;
 using Models.Components;
 
 namespace Models;
@@ -20,7 +20,8 @@ public static class DataLoader
             Address = GetAddress(id),
             Emails = Enumerable.Range(0, new Faker().Random.Int(1, 2)).Select(_ => GetEmail(id)).ToList(),
             Phones = Enumerable.Range(0, new Faker().Random.Int(1, 3)).Select(_ => GetPhone(id)).ToList(),
-            DefaultCommunicationChannelEnum = RandomCommunicationChannel()
+            DefaultCommunicationChannelEnum = RandomCommunicationChannel(),
+            BillStatus = RandomBillStatus()
         };
     }
 
@@ -68,5 +69,10 @@ public static class DataLoader
     private static CommunicationChannelEnum RandomCommunicationChannel()
     {
         return new Faker().Random.Enum<CommunicationChannelEnum>();
+    }
+
+    private static BillStatus RandomBillStatus()
+    {
+        return new Faker().Random.Enum<BillStatus>();
     }
 }

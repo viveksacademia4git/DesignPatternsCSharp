@@ -6,7 +6,8 @@ General, reusable solution to a commonly occurring problem within a given contex
 
 ### [Creational](Creational)
 1. [Singleton](Creational/Singleton)
-2. Builder
+2. [Factory](Creational/Factory)
+3. Builder
 
 ### [Behavioral Design Pattern](Behavioral)
 1. [Chain of Responsibility](Behavioral/ChainOfResponsibility)
@@ -15,3 +16,4 @@ General, reusable solution to a commonly occurring problem within a given contex
 
 ### [Structural Design Pattern](Structural)
 1. [Adapter](Structural/Adapter)
+2. [Bridge](Structural/Bridge)

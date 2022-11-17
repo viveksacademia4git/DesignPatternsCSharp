@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsibility.Enums;
+﻿namespace Enums;
 
 public enum CommunicationChannelEnum
 {

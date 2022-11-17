@@ -22,14 +22,24 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Behavioral\Command\Command.csproj", "{09EFD347-0728-4894-942D-CEC2F017231B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural", "Structural", "{80DF9949-142E-4440-8BF3-9DA4F98B1DD0}"
+	ProjectSection(SolutionItems) = preProject
+		Structural\README.md = Structural\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Structural\Adapter\Adapter.csproj", "{C2C0CF84-C711-4326-985A-0BCBB814D7D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational", "Creational", "{44FDDDBC-1F68-45CC-A71E-204701EF801B}"
+	ProjectSection(SolutionItems) = preProject
+		Creational\README.md = Creational\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Creational\Singleton\Singleton.csproj", "{283C8805-BC16-4189-AB7D-B79B66A60875}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "Behavioral\State\State.csproj", "{DE6CE527-9D60-42DE-86D3-45ED8DD844ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Structural\Bridge\Bridge.csproj", "{49E51931-A3CB-444F-B906-B65D207DA619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Creational\Factory\Factory.csproj", "{331C416B-5A12-4ABF-868F-BB4C6F75497E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +57,8 @@ Global
 		{C2C0CF84-C711-4326-985A-0BCBB814D7D6} = {80DF9949-142E-4440-8BF3-9DA4F98B1DD0}
 		{283C8805-BC16-4189-AB7D-B79B66A60875} = {44FDDDBC-1F68-45CC-A71E-204701EF801B}
 		{DE6CE527-9D60-42DE-86D3-45ED8DD844ED} = {868F9DBC-8E74-49FB-B65E-D444F2CCCF83}
+		{49E51931-A3CB-444F-B906-B65D207DA619} = {80DF9949-142E-4440-8BF3-9DA4F98B1DD0}
+		{331C416B-5A12-4ABF-868F-BB4C6F75497E} = {44FDDDBC-1F68-45CC-A71E-204701EF801B}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{916517D8-4C56-469D-983B-7A6796750878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -89,5 +101,13 @@ Global
 		{DE6CE527-9D60-42DE-86D3-45ED8DD844ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE6CE527-9D60-42DE-86D3-45ED8DD844ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE6CE527-9D60-42DE-86D3-45ED8DD844ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E51931-A3CB-444F-B906-B65D207DA619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E51931-A3CB-444F-B906-B65D207DA619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E51931-A3CB-444F-B906-B65D207DA619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E51931-A3CB-444F-B906-B65D207DA619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{331C416B-5A12-4ABF-868F-BB4C6F75497E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331C416B-5A12-4ABF-868F-BB4C6F75497E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331C416B-5A12-4ABF-868F-BB4C6F75497E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331C416B-5A12-4ABF-868F-BB4C6F75497E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,5 @@
-﻿using ChainOfResponsibility.Enums;
-using DesignPatternInterfaces;
+﻿using DesignPatternInterfaces;
+using Enums;
 using IO;
 using Models;
 
@@ -13,7 +13,7 @@ public class LetterCommunicationChannel : CommunicationChannel
     {
         $"Scheduling Letter for '{person.Name}' at address '{person.Address}'.".Print();
 
-        communicationOrganiser.Letter(person.Address);
+        communicationOrganiser.Letter(person.Address, person);
 
         $"Letter scheduled to '{person.Name}' at address '{person.Address}'.".Print();
     }

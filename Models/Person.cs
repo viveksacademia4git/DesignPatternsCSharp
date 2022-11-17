@@ -1,4 +1,4 @@
-﻿using ChainOfResponsibility.Enums;
+﻿using Enums;
 using Models.Components;
 
 namespace Models;
@@ -16,4 +16,6 @@ public class Person
     public ICollection<IPhone> Phones { get; set; }
 
     public CommunicationChannelEnum DefaultCommunicationChannelEnum { get; set; }
+
+    public BillStatus BillStatus { get; set; }
 }

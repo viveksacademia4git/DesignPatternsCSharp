@@ -12,8 +12,6 @@ public class CallCenter : ICommunicationResource<PhoneCall>
 
     private static CallCenter? _instance;
 
-    private static readonly List<PhoneCaller> PhoneCallList = new List<PhoneCaller>();
-
     private CallCenter() { }
 
     public static CallCenter GetInstance
@@ -33,24 +31,10 @@ public class CallCenter : ICommunicationResource<PhoneCall>
 
         $"Assigned operator '{phoneCall.Operator.Name}' for phone number '{phoneCall.Phone.Number}'".Print();
 
-        PhoneCallList.Add(new PhoneCaller(phoneCall));
+        CallCenterHandler.PhoneCallList.Add(new PhoneCaller(phoneCall));
     }
 
 
-    public static void StartCalling()
-    {
-        var phoneCallers = PhoneCallList.Where(callState =>
-            callState.PhoneCallState.GetType() == typeof(PhoneCallPending)).ToList();
-
-        if (phoneCallers.Count <= 0)
-            return;
-
-        foreach (var phoneCaller in phoneCallers)
-            phoneCaller.Result().Publish();
-
-        // ReSharper disable once TailRecursiveCall
-        StartCalling();
-    }
 
     private static CallOperator FindAvailableCallOperator()
     {

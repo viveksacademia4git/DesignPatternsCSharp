@@ -1,16 +1,17 @@
-﻿using Models.Components;
+﻿using Models;
+using Models.Components;
 
 namespace DesignPatternInterfaces;
 
 public interface ICommunicationOrganiser
 {
-    void Letter(IAddress address);
+    void Letter(IAddress address, Person person);
 
-    void Email(IEmail email);
+    void Email(IEmail email, Person person);
 
-    void PhoneCall(IPhone phone);
+    void PhoneCall(IPhone phone, Person person);
 
-    void Sms(IPhone phone);
+    void Sms(IPhone phone, Person person);
 
     void Start();
 }

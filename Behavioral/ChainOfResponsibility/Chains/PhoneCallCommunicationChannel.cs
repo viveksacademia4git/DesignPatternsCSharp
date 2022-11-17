@@ -1,5 +1,5 @@
-﻿using ChainOfResponsibility.Enums;
-using DesignPatternInterfaces;
+﻿using DesignPatternInterfaces;
+using Enums;
 using IO;
 using Models;
 using Models.Components;
@@ -16,7 +16,7 @@ public class PhoneCallCommunicationChannel : CommunicationChannel
 
         $"Scheduling Call for '{person.Name}' on phone number '{phone.Number}'.".Print();
 
-        communicationOrganiser.PhoneCall(phone);
+        communicationOrganiser.PhoneCall(phone, person);
 
         $"Call scheduled for '{person.Name}' on phone number '{phone.Number}'.".Print();
     }

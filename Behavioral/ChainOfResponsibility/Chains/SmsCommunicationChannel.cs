@@ -1,5 +1,5 @@
-﻿using ChainOfResponsibility.Enums;
-using DesignPatternInterfaces;
+﻿using DesignPatternInterfaces;
+using Enums;
 using IO;
 using Models;
 using Models.Components;
@@ -16,7 +16,7 @@ public class SmsCommunicationChannel : CommunicationChannel
 
         $"Scheduling SMS for '{person.Name}' on phone number '{phone.Number}'.".Print();
 
-        communicationOrganiser.Sms(phone);
+        communicationOrganiser.Sms(phone, person);
 
         $"SMS scheduled for '{person.Name}' on phone number '{phone.Number}'.".Print();
     }

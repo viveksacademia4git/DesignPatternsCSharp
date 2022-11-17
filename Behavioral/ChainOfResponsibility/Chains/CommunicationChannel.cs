@@ -1,6 +1,6 @@
-﻿using ChainOfResponsibility.Enums;
-using ChainOfResponsibility.Exceptions;
+﻿using ChainOfResponsibility.Exceptions;
 using DesignPatternInterfaces;
+using Enums;
 using Models;
 
 namespace ChainOfResponsibility.Chains;
