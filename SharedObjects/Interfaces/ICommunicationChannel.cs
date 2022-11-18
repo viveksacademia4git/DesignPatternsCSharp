@@ -1,6 +1,7 @@
-﻿using Models;
+﻿using CommonInterfaces;
+using SharedObjects.Models;
 
-namespace DesignPatternInterfaces;
+namespace SharedObjects.Interfaces;
 
 public interface ICommunicationChannel
 {

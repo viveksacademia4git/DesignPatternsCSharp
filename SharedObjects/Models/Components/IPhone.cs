@@ -1,4 +1,4 @@
-﻿namespace Models.Components;
+﻿namespace SharedObjects.Models.Components;
 
 public interface IPhone
 {

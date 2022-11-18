@@ -1,6 +1,6 @@
 ﻿using Bogus;
 
-namespace Models.ResourceComponents.PhoneCall;
+namespace SharedObjects.Models.ResourceComponents.PhoneCall;
 
 public class PhoneCall
 {

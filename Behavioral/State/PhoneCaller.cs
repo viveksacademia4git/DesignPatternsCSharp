@@ -1,6 +1,6 @@
 ﻿using Bogus;
-using IO;
-using Models.ResourceComponents.PhoneCall;
+using SharedObjects.IO;
+using SharedObjects.Models.ResourceComponents.PhoneCall;
 using State.States;
 
 namespace State;

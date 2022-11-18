@@ -2,7 +2,7 @@
 
 using ChainOfResponsibility;
 using Command.Invokers;
-using IO;
+using SharedObjects.IO;
 using Singleton;
 
 var organiser = new CommunicationProcessInvoker();

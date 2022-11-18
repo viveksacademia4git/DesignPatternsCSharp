@@ -1,6 +1,6 @@
 ﻿using Bridge.Abstraction2;
-using IO;
-using Models;
+using SharedObjects.IO;
+using SharedObjects.Models;
 
 namespace Bridge.Abstraction1;
 

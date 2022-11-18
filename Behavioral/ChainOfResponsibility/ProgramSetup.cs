@@ -1,6 +1,7 @@
 ﻿using ChainOfResponsibility.Chains;
-using DesignPatternInterfaces;
-using Models;
+using CommonInterfaces;
+using SharedObjects.Interfaces;
+using SharedObjects.Models;
 
 namespace ChainOfResponsibility;
 

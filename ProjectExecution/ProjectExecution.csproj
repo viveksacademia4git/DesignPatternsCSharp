@@ -10,10 +10,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Behavioral\ChainOfResponsibility\ChainOfResponsibility.csproj"/>
         <ProjectReference Include="..\Behavioral\Command\Command.csproj"/>
-        <ProjectReference Include="..\DesignPatternInterfaces\DesignPatternInterfaces.csproj"/>
-        <ProjectReference Include="..\Enums\Enums.csproj"/>
-        <ProjectReference Include="..\IO\IO.csproj"/>
-        <ProjectReference Include="..\Models\Models.csproj"/>
+        <ProjectReference Include="..\SharedObjects\SharedObjects.csproj"/>
     </ItemGroup>
 
 </Project>

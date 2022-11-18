@@ -7,13 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Creational\Factory\Factory.csproj"/>
-        <ProjectReference Include="..\..\DesignPatternInterfaces\DesignPatternInterfaces.csproj"/>
-        <ProjectReference Include="..\..\Enums\Enums.csproj"/>
-        <ProjectReference Include="..\..\IO\IO.csproj"/>
-        <ProjectReference Include="..\..\Models\Models.csproj"/>
-        <ProjectReference Include="..\..\Structural\Adapter\Adapter.csproj"/>
-        <ProjectReference Include="..\..\Structural\Bridge\Bridge.csproj"/>
+        <ProjectReference Include="..\..\Creational\Factory\Factory.csproj" />
+        <ProjectReference Include="..\..\Structural\Adapter\Adapter.csproj" />
+        <ProjectReference Include="..\..\Structural\Bridge\Bridge.csproj" />
     </ItemGroup>
 
 </Project>

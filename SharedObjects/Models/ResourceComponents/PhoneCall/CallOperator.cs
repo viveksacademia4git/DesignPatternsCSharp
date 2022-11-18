@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace SharedObjects.Models.ResourceComponents.PhoneCall;
 
 public class CallOperator
 {

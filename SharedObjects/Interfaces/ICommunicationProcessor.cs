@@ -1,4 +1,4 @@
-﻿namespace DesignPatternInterfaces;
+﻿namespace CommonInterfaces;
 
 public interface ICommunicationProcessor
 {

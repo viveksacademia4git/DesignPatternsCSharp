@@ -1,7 +1,8 @@
 ﻿using ChainOfResponsibility.Exceptions;
-using DesignPatternInterfaces;
+using CommonInterfaces;
 using Enums;
-using Models;
+using SharedObjects.Interfaces;
+using SharedObjects.Models;
 
 namespace ChainOfResponsibility.Chains;
 

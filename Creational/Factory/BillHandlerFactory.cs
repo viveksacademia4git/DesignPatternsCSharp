@@ -1,7 +1,7 @@
 ﻿using Bridge.Abstraction1;
 using Bridge.Abstraction2;
 using Enums;
-using Models;
+using SharedObjects.Models;
 
 namespace Factory;
 

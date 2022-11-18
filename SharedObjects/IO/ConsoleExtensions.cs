@@ -1,4 +1,4 @@
-﻿namespace IO;
+﻿namespace SharedObjects.IO;
 
 public static class ConsoleExtensions
 {

@@ -1,9 +1,9 @@
 ﻿using Command.Processors;
-using DesignPatternInterfaces;
+using CommonInterfaces;
 using Enums;
-using IO;
-using Models;
-using Models.Components;
+using SharedObjects.IO;
+using SharedObjects.Models;
+using SharedObjects.Models.Components;
 
 namespace ChainOfResponsibility.Chains;
 

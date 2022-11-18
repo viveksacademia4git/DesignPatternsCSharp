@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Enums\Enums.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="Bogus" Version="34.0.2"/>
     </ItemGroup>
 

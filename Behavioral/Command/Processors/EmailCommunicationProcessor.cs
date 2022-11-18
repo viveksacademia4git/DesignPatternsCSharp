@@ -1,9 +1,9 @@
 ﻿using Bridge.Abstraction2;
-using DesignPatternInterfaces;
+using CommonInterfaces;
 using Factory;
-using IO;
-using Models;
-using Models.Components;
+using SharedObjects.IO;
+using SharedObjects.Models;
+using SharedObjects.Models.Components;
 
 namespace Command.Processors;
 

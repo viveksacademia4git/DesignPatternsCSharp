@@ -1,7 +1,6 @@
 ﻿using Bogus;
-using IO;
-using Models;
-using Models.ResourceComponents.PhoneCall;
+using SharedObjects.IO;
+using SharedObjects.Models.ResourceComponents.PhoneCall;
 using State;
 
 namespace Singleton;

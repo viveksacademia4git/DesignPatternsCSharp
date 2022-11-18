@@ -1,7 +1,7 @@
 ﻿using Enums;
-using Models.Components;
+using SharedObjects.Models.Components;
 
-namespace Models;
+namespace SharedObjects.Models;
 
 public class Person
 {

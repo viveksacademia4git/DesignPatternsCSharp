@@ -1,4 +1,4 @@
-﻿using DesignPatternInterfaces;
+﻿using CommonInterfaces;
 
 namespace Command.Invokers;
 

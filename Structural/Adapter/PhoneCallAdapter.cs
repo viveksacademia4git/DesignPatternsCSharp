@@ -1,6 +1,6 @@
 ﻿using DesignPatternInterfaces;
-using Models.Components;
-using Models.ResourceComponents.PhoneCall;
+using SharedObjects.Models.Components;
+using SharedObjects.Models.ResourceComponents.PhoneCall;
 using Singleton;
 
 namespace Adapter;

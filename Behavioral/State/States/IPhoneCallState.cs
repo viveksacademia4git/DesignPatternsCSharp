@@ -1,4 +1,4 @@
-﻿using Models.ResourceComponents.PhoneCall;
+﻿using SharedObjects.Models.ResourceComponents.PhoneCall;
 
 namespace State.States;
 

@@ -1,5 +1,5 @@
-﻿using IO;
-using Models.Components;
+﻿using SharedObjects.IO;
+using SharedObjects.Models.Components;
 
 namespace Bridge.Abstraction2;
 

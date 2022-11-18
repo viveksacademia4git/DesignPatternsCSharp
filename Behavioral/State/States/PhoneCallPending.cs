@@ -1,5 +1,5 @@
-﻿using IO;
-using Models.ResourceComponents.PhoneCall;
+﻿using SharedObjects.IO;
+using SharedObjects.Models.ResourceComponents.PhoneCall;
 
 namespace State.States;
 

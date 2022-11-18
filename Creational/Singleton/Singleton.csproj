@@ -7,9 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Behavioral\State\State.csproj"/>
-        <ProjectReference Include="..\..\IO\IO.csproj"/>
-        <ProjectReference Include="..\..\Models\Models.csproj"/>
+        <ProjectReference Include="..\..\Behavioral\State\State.csproj" />
+        <ProjectReference Include="..\..\SharedObjects\SharedObjects.csproj" />
     </ItemGroup>
 
 </Project>
