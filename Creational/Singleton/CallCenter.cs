@@ -1,8 +1,8 @@
 ﻿using Bogus;
 using IO;
 using Models;
+using Models.ResourceComponents.PhoneCall;
 using State;
-using State.States;
 
 namespace Singleton;
 
@@ -29,11 +29,10 @@ public class CallCenter : ICommunicationResource<PhoneCall>
     {
         phoneCall.Operator = FindAvailableCallOperator();
 
-        $"Assigned operator '{phoneCall.Operator.Name}' for phone number '{phoneCall.Phone.Number}'".Print();
+        $"Assigned operator '{phoneCall.Operator.Name}' for phone number '{phoneCall.PhoneNumber}'".Print();
 
         CallCenterHandler.PhoneCallList.Add(new PhoneCaller(phoneCall));
     }
-
 
 
     private static CallOperator FindAvailableCallOperator()

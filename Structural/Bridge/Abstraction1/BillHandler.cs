@@ -20,7 +20,8 @@ public abstract class BillHandler
 
 public class PaidBillHandler : BillHandler
 {
-    public PaidBillHandler(ICommunicationHandler communicationHandler, Person person) : base(communicationHandler, person) { }
+    public PaidBillHandler(ICommunicationHandler communicationHandler, Person person) : base(communicationHandler,
+        person) { }
 
     public override void Handle()
     {
@@ -31,7 +32,8 @@ public class PaidBillHandler : BillHandler
 
 public class DueBillHandler : BillHandler
 {
-    public DueBillHandler(ICommunicationHandler communicationHandler, Person person) : base(communicationHandler, person) { }
+    public DueBillHandler(ICommunicationHandler communicationHandler, Person person) : base(communicationHandler,
+        person) { }
 
     public override void Handle()
     {
@@ -42,7 +44,8 @@ public class DueBillHandler : BillHandler
 
 public class LateBillHandler : BillHandler
 {
-    public LateBillHandler(ICommunicationHandler communicationHandler, Person person) : base(communicationHandler, person) { }
+    public LateBillHandler(ICommunicationHandler communicationHandler, Person person) : base(communicationHandler,
+        person) { }
 
     public override void Handle()
     {

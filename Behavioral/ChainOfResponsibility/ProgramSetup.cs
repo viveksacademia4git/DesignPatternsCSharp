@@ -13,14 +13,14 @@ public static class ProgramSetup
             .AddNextInChain(new SmsCommunicationChannel());
     }
 
-    public static void InitializeCommunication(ICommunicationOrganiser communicationOrganiser)
+    public static void InitializeCommunication(ICommunicationProcessInvoker communicationProcessInvoker)
     {
         var communication = ConfigureChainOfResponsibilityForCommunication();
 
         DataLoader.GetRandomDataModels().ForEach(dataModel =>
         {
             Console.WriteLine($"\n({dataModel.Id})");
-            communication.Process(dataModel, communicationOrganiser);
+            communication.Process(dataModel, communicationProcessInvoker);
         });
     }
 }

@@ -27,16 +27,16 @@ public abstract class CommunicationChannel : ICommunicationChannel
         return this;
     }
 
-    public void Process(Person person, ICommunicationOrganiser communicationOrganiser)
+    public void Process(Person person, ICommunicationProcessInvoker communicationProcessInvoker)
     {
         var isResponsible = _communicationChannelEnum.Equals(person.DefaultCommunicationChannelEnum);
 
         try
         {
             if (isResponsible)
-                PerformCommunication(person, communicationOrganiser);
+                PerformCommunication(person, communicationProcessInvoker);
             else
-                PassOnResponsibilityToNextInChain(person, communicationOrganiser);
+                PassOnResponsibilityToNextInChain(person, communicationProcessInvoker);
         }
         catch (Exception exception)
         {
@@ -44,7 +44,8 @@ public abstract class CommunicationChannel : ICommunicationChannel
         }
     }
 
-    private void PassOnResponsibilityToNextInChain(Person person, ICommunicationOrganiser communicationOrganiser)
+    private void PassOnResponsibilityToNextInChain(Person person,
+        ICommunicationProcessInvoker communicationProcessInvoker)
     {
         if (_nextInChain is null)
         {
@@ -52,8 +53,9 @@ public abstract class CommunicationChannel : ICommunicationChannel
             throw new InvalidCommunicationChainImplementedException(msg);
         }
 
-        _nextInChain.Process(person, communicationOrganiser);
+        _nextInChain.Process(person, communicationProcessInvoker);
     }
 
-    protected abstract void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser);
+    protected abstract void PerformCommunication(Person person,
+        ICommunicationProcessInvoker communicationProcessInvoker);
 }

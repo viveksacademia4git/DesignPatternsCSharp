@@ -1,7 +1,6 @@
 ﻿using Bogus;
-using Models.Components;
 
-namespace Models;
+namespace Models.ResourceComponents.PhoneCall;
 
 public class PhoneCall
 {
@@ -12,7 +11,7 @@ public class PhoneCall
 
     public long Id { get; set; }
 
-    public IPhone Phone { get; set; }
+    public string PhoneNumber { get; set; }
 
     public CallOperator Operator { get; set; }
 }

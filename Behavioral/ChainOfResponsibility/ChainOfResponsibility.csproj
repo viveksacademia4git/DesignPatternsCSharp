@@ -11,6 +11,7 @@
         <ProjectReference Include="..\..\Enums\Enums.csproj"/>
         <ProjectReference Include="..\..\IO\IO.csproj"/>
         <ProjectReference Include="..\..\Models\Models.csproj"/>
+        <ProjectReference Include="..\Command\Command.csproj"/>
     </ItemGroup>
 
 </Project>

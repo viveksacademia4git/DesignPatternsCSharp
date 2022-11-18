@@ -1,5 +1,4 @@
-﻿
-using Bridge.Abstraction2;
+﻿using Bridge.Abstraction2;
 using DesignPatternInterfaces;
 using Factory;
 using IO;
@@ -11,8 +10,8 @@ namespace Command.Processors;
 public class LetterCommunicationProcessor : ICommunicationProcessor
 {
     private readonly IAddress _address;
-    private readonly Person _person;
     private readonly ICommunicationHandler _communicationHandler;
+    private readonly Person _person;
 
     public LetterCommunicationProcessor(IAddress address, Person person)
     {
@@ -25,7 +24,7 @@ public class LetterCommunicationProcessor : ICommunicationProcessor
     {
         $"\n({_address.RefId})".Print();
 
-        var billHandler =  new BillHandlerFactory(_communicationHandler).Get(_person);
+        var billHandler = new BillHandlerFactory(_communicationHandler).Get(_person);
         billHandler.Handle();
 
         // "Drafting text content for Letter.".Print();

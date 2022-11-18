@@ -1,5 +1,5 @@
 ﻿using IO;
-using Models;
+using Models.ResourceComponents.PhoneCall;
 
 namespace State.States;
 
@@ -14,6 +14,6 @@ public class PhoneCallPending : IPhoneCallState
 
     public void Handle()
     {
-        $"--- Call not completed for phone number '{PhoneCall.Phone.Number}'\n".Print();
+        $"--- Call not completed for phone number '{PhoneCall.PhoneNumber}'\n".Print();
     }
 }

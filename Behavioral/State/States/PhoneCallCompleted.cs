@@ -1,5 +1,5 @@
 ﻿using IO;
-using Models;
+using Models.ResourceComponents.PhoneCall;
 
 namespace State.States;
 
@@ -14,6 +14,6 @@ public class PhoneCallCompleted : IPhoneCallState
 
     public void Handle()
     {
-        $"*** Operator '{PhoneCall.Operator.Name}' completed phone call for '{PhoneCall.Phone.Number}'\n".Print();
+        $"*** Operator '{PhoneCall.Operator.Name}' completed phone call for '{PhoneCall.PhoneNumber}'\n".Print();
     }
 }

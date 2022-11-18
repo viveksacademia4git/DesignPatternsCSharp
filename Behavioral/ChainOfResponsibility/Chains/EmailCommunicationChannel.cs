@@ -1,4 +1,5 @@
-﻿using DesignPatternInterfaces;
+﻿using Command.Processors;
+using DesignPatternInterfaces;
 using Enums;
 using IO;
 using Models;
@@ -10,13 +11,14 @@ public class EmailCommunicationChannel : CommunicationChannel
 {
     public EmailCommunicationChannel() : base(CommunicationChannelEnum.Email) { }
 
-    protected override void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser)
+    protected override void PerformCommunication(Person person,
+        ICommunicationProcessInvoker communicationProcessInvoker)
     {
         var email = GetEmail(person);
 
         $"Scheduling Email for '{person.Name}' at email '{email.EmailAddress}'.".Print();
 
-        communicationOrganiser.Email(email, person);
+        communicationProcessInvoker.Register(new EmailCommunicationProcessor(email, person));
 
         $"Email scheduled for '{person.Name}' at email '{email.EmailAddress}'.".Print();
     }

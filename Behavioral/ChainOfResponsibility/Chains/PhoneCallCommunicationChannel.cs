@@ -1,4 +1,5 @@
-﻿using DesignPatternInterfaces;
+﻿using Command.Processors;
+using DesignPatternInterfaces;
 using Enums;
 using IO;
 using Models;
@@ -10,13 +11,14 @@ public class PhoneCallCommunicationChannel : CommunicationChannel
 {
     public PhoneCallCommunicationChannel() : base(CommunicationChannelEnum.PhoneCall) { }
 
-    protected override void PerformCommunication(Person person, ICommunicationOrganiser communicationOrganiser)
+    protected override void PerformCommunication(Person person,
+        ICommunicationProcessInvoker communicationProcessInvoker)
     {
         var phone = GetCallingAllowedPhone(person);
 
         $"Scheduling Call for '{person.Name}' on phone number '{phone.Number}'.".Print();
 
-        communicationOrganiser.PhoneCall(phone, person);
+        communicationProcessInvoker.Register(new PhoneCallCommunicationProcessor(phone, person));
 
         $"Call scheduled for '{person.Name}' on phone number '{phone.Number}'.".Print();
     }

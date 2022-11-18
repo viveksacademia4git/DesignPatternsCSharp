@@ -1,6 +1,6 @@
 ﻿using Bogus;
 using IO;
-using Models;
+using Models.ResourceComponents.PhoneCall;
 using State.States;
 
 namespace State;
@@ -16,7 +16,7 @@ public class PhoneCaller : IPhoneCallerAttempt, IPhoneCallerResult
 
     public IPhoneCallerResult Result()
     {
-        $"Operator '{PhoneCallState.PhoneCall.Operator.Name}' is calling phone number '{PhoneCallState.PhoneCall.Phone.Number}'"
+        $"Operator '{PhoneCallState.PhoneCall.Operator.Name}' is calling phone number '{PhoneCallState.PhoneCall.PhoneNumber}'"
             .Print();
 
         var callResult = new Faker().Random.Bool();

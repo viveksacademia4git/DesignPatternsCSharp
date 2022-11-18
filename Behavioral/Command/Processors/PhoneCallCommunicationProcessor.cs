@@ -9,8 +9,8 @@ namespace Command.Processors;
 public class PhoneCallCommunicationProcessor : ICommunicationProcessor
 {
     private readonly ICommunicationAdapter _communicationAdapter;
-    private readonly IPhone _phone;
     private readonly Person _person;
+    private readonly IPhone _phone;
 
     public PhoneCallCommunicationProcessor(IPhone phone, Person person)
     {

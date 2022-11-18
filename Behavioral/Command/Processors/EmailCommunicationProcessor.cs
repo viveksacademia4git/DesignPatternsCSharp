@@ -9,9 +9,9 @@ namespace Command.Processors;
 
 public class EmailCommunicationProcessor : ICommunicationProcessor
 {
+    private readonly ICommunicationHandler _communicationHandler;
     private readonly IEmail _email;
     private readonly Person _person;
-    private readonly ICommunicationHandler _communicationHandler;
 
     public EmailCommunicationProcessor(IEmail email, Person person)
     {
@@ -24,7 +24,7 @@ public class EmailCommunicationProcessor : ICommunicationProcessor
     {
         $"\n({_email.RefId})".Print();
 
-        var billHandler =  new BillHandlerFactory(_communicationHandler).Get(_person);
+        var billHandler = new BillHandlerFactory(_communicationHandler).Get(_person);
         billHandler.Handle();
 
         // "Drafted text content for Email.".Print();

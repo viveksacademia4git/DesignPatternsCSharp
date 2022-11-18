@@ -1,10 +1,13 @@
 ﻿using DesignPatternInterfaces;
-using Models;
 using Models.Components;
+using Models.ResourceComponents.PhoneCall;
 using Singleton;
 
 namespace Adapter;
 
+/// <summary>
+///     Converts the interface of a class into another interface clients expect.
+/// </summary>
 public class PhoneCallAdapter : ICommunicationAdapter
 {
     private readonly IPhone _phone;
@@ -16,7 +19,7 @@ public class PhoneCallAdapter : ICommunicationAdapter
 
     public void Communicate()
     {
-        var phoneCall = new PhoneCall { Phone = _phone };
+        var phoneCall = new PhoneCall { PhoneNumber = _phone.Number };
 
         CallCenter.GetInstance.Assign(phoneCall);
     }

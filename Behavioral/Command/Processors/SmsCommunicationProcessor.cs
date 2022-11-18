@@ -9,9 +9,9 @@ namespace Command.Processors;
 
 public class SmsCommunicationProcessor : ICommunicationProcessor
 {
-    private readonly IPhone _phone;
-    private readonly Person _person;
     private readonly SmsCommunicationHandler _communicationHandler;
+    private readonly Person _person;
+    private readonly IPhone _phone;
 
     public SmsCommunicationProcessor(IPhone phone, Person person)
     {
@@ -24,7 +24,7 @@ public class SmsCommunicationProcessor : ICommunicationProcessor
     {
         $"\n({_phone.RefId})".Print();
 
-        var billHandler =  new BillHandlerFactory(_communicationHandler).Get(_person);
+        var billHandler = new BillHandlerFactory(_communicationHandler).Get(_person);
         billHandler.Handle();
 
         // "Drafted text content for SMS.".Print();
