@@ -1,6 +1,6 @@
 ﻿using Command.Processors;
-using CommonInterfaces;
 using Enums;
+using SharedObjects.Interfaces;
 using SharedObjects.IO;
 using SharedObjects.Models;
 using SharedObjects.Models.Components;

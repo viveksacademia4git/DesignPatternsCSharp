@@ -1,5 +1,4 @@
-﻿using CommonInterfaces;
-using SharedObjects.Models;
+﻿using SharedObjects.Models;
 
 namespace SharedObjects.Interfaces;
 

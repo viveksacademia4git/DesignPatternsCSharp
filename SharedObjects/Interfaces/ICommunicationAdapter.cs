@@ -1,4 +1,4 @@
-﻿namespace DesignPatternInterfaces;
+﻿namespace SharedObjects.Interfaces;
 
 public interface ICommunicationAdapter
 {

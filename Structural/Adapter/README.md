@@ -6,5 +6,5 @@ Converts the interface of a class into another interface clients expect.
 
 ### Phone Call Adapter
 
-IPhone interface and CallOperator are incompatible with each other.
-Phone call adapter helps 'IPhone' and 'CallOperator' work together. 
+'Phone call communication process' and 'CallCenter' are incompatible with each other.
+'Phone call adapter' helps 'Phone call communication process' and 'CallCenter' work together. 

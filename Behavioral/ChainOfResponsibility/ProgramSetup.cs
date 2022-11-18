@@ -1,5 +1,4 @@
 ﻿using ChainOfResponsibility.Chains;
-using CommonInterfaces;
 using SharedObjects.Interfaces;
 using SharedObjects.Models;
 

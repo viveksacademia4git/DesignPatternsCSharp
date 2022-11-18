@@ -1,4 +1,4 @@
-﻿using CommonInterfaces;
+﻿using SharedObjects.Interfaces;
 
 namespace Command.Invokers;
 

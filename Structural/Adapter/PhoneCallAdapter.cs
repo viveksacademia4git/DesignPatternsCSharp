@@ -1,4 +1,4 @@
-﻿using DesignPatternInterfaces;
+﻿using SharedObjects.Interfaces;
 using SharedObjects.Models.Components;
 using SharedObjects.Models.ResourceComponents.PhoneCall;
 using Singleton;
